@@ -23,7 +23,7 @@ function editar_produto(id, qtdAtual) { // aqui temos PUT
         if(p.id == id){
             p.qtd = qtdAtual;
         }
-        pEditado = p;
+        pEditado = produtos;
     });
     return pEditado;
 }
