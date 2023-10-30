@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario </title>
+</head>
+<body>
+    <form action="/dados" method="post" onsubmit="valida()">
+        <label for="">Nome Completo</label>
+        <input type="text"  name="nome">
+        <label for="">CPF</label>
+        <input type="tel"  name="cpf">
+        <label for="">Data de Nascimento</label>
+        <input type="date"  name="data">
+        <label for="">Endereço</label>
+        <input type="text"  name="address">
+        <label for="">UF</label>
+        <input type="text"  name="uf">
+        <label for="">CEP</label>
+        <input type="number"  name="cep">
+        <label for="">E-mail</label>
+        <input type="text"  name="email">
+        <label for="">Telefone</label>
+        <input type="tel"  name="telefone">
+        <label for="especialiade">Especialidade</label>
+        <select name="especialidade" >
+            <option value="Pediatria">Pediatria</option>
+            <option value="Ortopedia">Ortopedia</option>
+            <option value="Traumatologia">Traumatologia</option>
+            <option value="Cardiologia">Cardiologia</option>
+            <option value="Oftalmologia">Oftalmologia</option>
+        </select>
+        <label for="alergico">Alergia algum remedio, se sim qual ?</label>
+        <select name="aler" id="alergicos">
+            <option value="Não">Não</option>
+            <option value="Antibioticos">Antibioticos</option>
+            <option value="Anti-Inflamatórios">Anti-Inflamatórios</option>
+        </select>
+        <label for="">Informações</label>
+        <textarea name="info" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="Enviar" >
+    </form>
+
+    <script>
+        function valida(){
+               // Obter todos os campos de entrada do formulário
+               const campos = document.querySelectorAll("input, textarea");
+
+        // Verificar se todos os campos estão preenchidos
+        for (const campo of campos) {
+            if (campo.value.trim() === "") {
+                alert("Por favor, preencha todos os campos.");
+                return false; // Impede o envio do formulário
+            }
+        }
+
+        // Se todos os campos estiverem preenchidos, o formulário será enviado
+        return true;
+
+        }
+
+    </script>
+
+ <style>
+    body {
+        padding: 40px 60px 60px 60px;  
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-top: 15px;
+    }
+
+ </style>       
+</body>
+</html>
