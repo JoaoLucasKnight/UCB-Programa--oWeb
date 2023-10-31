@@ -6,7 +6,8 @@
     <title>Formulario </title>
 </head>
 <body>
-    <form action="/dados" method="post" onsubmit="valida()">
+  <!-- O return é necessário para garantir que o valor retornado pela função (true ou false) seja passado corretamente para o evento onsubmit. -->
+    <form action="/dados" method="post" onsubmit="return valida()"> 
         <label for="">Nome Completo</label>
         <input type="text"  name="nome">
         <label for="">CPF</label>
@@ -14,7 +15,7 @@
         <label for="">Data de Nascimento</label>
         <input type="date"  name="data">
         <label for="">Endereço</label>
-        <input type="text"  name="address">
+        <input type="text"  name="endereço">
         <label for="">UF</label>
         <input type="text"  name="uf">
         <label for="">CEP</label>
@@ -32,13 +33,13 @@
             <option value="Oftalmologia">Oftalmologia</option>
         </select>
         <label for="alergico">Alergia algum remedio, se sim qual ?</label>
-        <select name="aler" id="alergicos">
+        <select name="alergicos" id="alergicos">
             <option value="Não">Não</option>
             <option value="Antibioticos">Antibioticos</option>
             <option value="Anti-Inflamatórios">Anti-Inflamatórios</option>
         </select>
         <label for="">Informações</label>
-        <textarea name="info" id="" cols="30" rows="10"></textarea>
+        <textarea name="informações" id="" cols="30" rows="10"></textarea>
         <input type="submit" value="Enviar" >
     </form>
 
@@ -50,7 +51,7 @@
         // Verificar se todos os campos estão preenchidos
         for (const campo of campos) {
             if (campo.value.trim() === "") {
-                alert("Por favor, preencha todos os campos.");
+                alert("Por favor, preencha todos os campos. O campo " + campo.name + " não foi preenchido");
                 return false; // Impede o envio do formulário
             }
         }
