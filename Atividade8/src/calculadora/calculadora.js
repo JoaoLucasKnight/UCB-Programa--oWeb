@@ -1,22 +1,23 @@
 function calculo (operador, n1, n2) {
-    
+    let resultado;
     switch (operador){
-        case Somar:
-            return n1 +n2;
+        case 'Somar':
+            resultado = n1 +n2;
         break;
     
-        case Subtrair:
-            return n1 - n2;
+        case 'Subtrair':
+            resultado = n1 - n2;
         break;
       
-        case Multiplicar:
-            return n1 * n2;
+        case 'Multiplicar':
+            resultado = n1 * n2;
         break;
         
-        case Dividir:
-            return n1 / nn2;
+        case 'Dividir':
+            resultado = n1 / n2;
         break;
     }
+    return resultado;
 }
 
 
