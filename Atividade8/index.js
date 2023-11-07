@@ -11,7 +11,7 @@ app.set('views', __dirname + '/src/views');
 app.use(express.urlencoded({extended: true}));
 
 // Todas as requisições serão enviadas paras calculadora routes 
-app.use('/', require('./src/routes/calculadoraRoutes'));
+app.use('/', require("./src/routes/calculadoraRoutes."));
 
 //Porta
 const PORT = 8000
